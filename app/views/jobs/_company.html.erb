@@ -1,29 +1,29 @@
-<div class="field">
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<div class="form-group col-md-12">
+  <%= f.label "Name" %>
+  <%= f.text_field :name, class: "form-control fch" %>
 </div>
 
-<div class="field">
-  <%= f.label :statement %>
-  <%= f.text_field :statement %>
+<div class="form-group col-md-12">
+  <%= f.label "Company Statement" %>
+  <%= f.text_field :statement, class: "form-control fch" %>
 </div>
 
-<div class="field">
-  <%= f.label :logo %>
-  <%= f.text_field :logo %>
+<div class="form-group col-md-12">
+  <%= f.label "Logo" %>
+  <%= f.text_field :logo, class: "form-control fch" %>
 </div>
 
-<div class="field">
-  <%= f.label :url %>
-  <%= f.text_field :url %>
+<div class="form-group col-md-6">
+  <%= f.label "Company's Website URL" %>
+  <%= f.text_field :url, class: "form-control fch" %>
 </div>
 
-<div class="field">
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+<div class="form-group col-md-6">
+  <%= f.label "Email" %>
+  <%= f.text_field :email, class: "form-control fch" %>
 </div>
 
-<div class="field">
-  <%= f.label :company_description %>
-  <%= f.text_area :company_description %>
+<div class="form-group col-md-12">
+  <%= f.label "Tell Us More About Your Company" %>
+  <%= f.text_area :company_description, class: "form-control fch" %>
 </div>
