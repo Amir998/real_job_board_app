@@ -32,7 +32,7 @@
 
 <p>
   <strong>Job Description:</strong>
-  <%= @job.description %>
+  <%= sanitize @job.description %>
 </p>
 
 <p>
@@ -57,7 +57,7 @@
 
 <p>
   <strong>Tell Us More About Your Company:</strong>
-  <%= @company.company_description %>
+  <%= sanitize @company.company_description %>
 </p>
 
 <%= link_to 'Edit', edit_job_path(@job) %> |

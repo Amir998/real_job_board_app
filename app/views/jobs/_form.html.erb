@@ -1,4 +1,4 @@
-<%= simple_form_for(@job) do |f| %>
+<%= form_for(@job) do |f| %>
 <% if job.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
@@ -12,7 +12,7 @@
 <% end %>
 
 <div class="container form-job">
-  <form>
+
     <div class="form-row">
       <h3>First, tell us about the position</h3>
       <div class="form-group col-md-12">
@@ -35,12 +35,12 @@
 
       <div class="form-group col-md-6">
         <%= f.label "Headquarters" %>
-        <%= f.text_field :headquarters, class: "form-control fch fcw" %>
+        <%= f.text_field :headquarters, class: "form-control fch" %>
       </div>
 
       <div class="form-group col-md-6">
         <%= f.label "Region" %>
-        <%= f.text_field :region, class: "form-control fch fcw" %>
+        <%= f.text_field :region, class: "form-control fch" %>
       </div>
 
       <div class="form-group col-md-12">
@@ -50,7 +50,8 @@
 
       <div class="form-group col-md-12">
         <%= f.label "Job Description" %>
-        <%= f.text_area :description, class: "form-control fch" %>
+        <%= f.hidden_field :description, class: "form-control fch", id: :description %>
+        <trix-editor input="description" class="teh"</trix-editor>
       </div>
 
       <h3>Tell us more about your company</h3>
@@ -62,6 +63,6 @@
         <%= f.submit %>
       </div>
     </div>
-  </form>
+
 </div>
 <% end %>

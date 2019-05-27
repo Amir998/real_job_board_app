@@ -10,11 +10,11 @@
 
 <div class="form-group col-md-12">
   <%= f.label "Logo" %>
-  <%= f.text_field :logo, class: "form-control fch" %>
+  <%= f.file_field :logo, class: "form-control fch" %>
 </div>
 
 <div class="form-group col-md-6">
-  <%= f.label "Company's Website URL" %>
+  <%= f.label :url, "Company's Website URL" %>
   <%= f.text_field :url, class: "form-control fch" %>
 </div>
 
@@ -25,5 +25,6 @@
 
 <div class="form-group col-md-12">
   <%= f.label "Tell Us More About Your Company" %>
-  <%= f.text_area :company_description, class: "form-control fch" %>
+  <%= f.hidden_field :company_description, class: "form-control fch", id: :company_description %>
+  <trix-editor input="company_description" class="teh"</trix-editor>
 </div>
