@@ -7,4 +7,21 @@
   <%= link_to "Post a job for $299/month", new_job_path, class: "btn btn-primary btn-lg post-btn" %>
   </div>
 </div>
+
+<% @jobs.each do |job| %>
+<div class="card mx-auto mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <%= image_tag(company.company_logo, style: 'max-height:100px; max-width:100px;') if company.company_logo.attached? %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
 </main>

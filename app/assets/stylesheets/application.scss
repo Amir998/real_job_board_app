@@ -57,7 +57,7 @@
   padding-bottom: 20px;
 }
 
-select#job_category {
+select#job_category { //Set up Category field
   width: 429px;
   height: 58px;
 }
@@ -68,10 +68,69 @@ select#job_category {
   margin-top: 17px;
 }
 
-.mdb-color {
+.mdb-color { //Changed footer bg color
   background-color: #f8f9fa;
 }
 
-.teh {
+.teh { //Trix editor field height
   height: 250px;
+  overflow-y: auto;
+}
+
+.cte { //Customize upload file field
+  border: 2px lightgrey dotted;
+  height: 140px;
+}
+
+.parent-container {
+  width: 950px;
+  margin: 100px auto;
+}
+
+.head-container {
+  width: 665px;
+  margin-left: -50px;
+}
+
+.head-container h1 {
+  padding: 15px 0;
+}
+
+.main-container {
+  width: 675px;
+  margin-left: -50px;
+}
+
+.main-container h1 {
+  padding: 15px 0;
+}
+
+.bottom-container {
+  width: 675px;
+  margin-left: -50px;
+}
+
+.jtcr {
+  color: #2736a3;
+  background-color: #dde0f4;
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding: 6px 8px 2px 8px;
+  border-radius: 2px;
+  border: 1px solid #2736a3;
+  display: inline-block;
+  font-family: "Neufile Grotesk Regular", sans-serif;
+  margin-right: 8px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+div .card {
+  float: right;
+  background-color: #f8f9fa;
+}
+
+div .card img {
+  margin-top: 20px;
 }

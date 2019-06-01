@@ -1,64 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Job Title:</strong>
-  <%= @job.title %>
-</p>
+<div class="container parent-container">
+  <div align="center" class="card" style="width: 18rem;">
+    <%= image_tag(@company.company_logo, style: 'max-height:100px; max-width:100px;') if @company.company_logo.attached? %>
+    <div class="card-body">
+      <h3 class="card-title"><%= @company.name %></h3>
+      <h6><%= octicon "location", :height => 24,  :class => "right left", :"aria-label" => "hi" %><br><%= @job.headquarters %></h6>
+      <h6><%= link_to "View website", "http://#{@company.url}", :target => "_blank" %></h6>
+      <%= link_to "Apply for this position", "http://#{@job.apply_link}", class: "btn btn-primary post-btn", :target => "_blank" %>
+    </div>
+  </div>
 
-<p>
-  <strong>Category:</strong>
-  <%= @job.category %>
-</p>
+<div class="container head-container">
+  <h7 class="text-muted">POSTED <%= @job.created_at.strftime("%B %d") %></h7>
 
-<p>
-  <strong>Job Type:</strong>
-  <%= @job.job_type %>
-</p>
+  <h1><%= @job.title %></h1>
 
-<p>
-  <strong>Headquarters:</strong>
-  <%= @job.headquarters %>
-</p>
+  <span class= "jtcr"><%= @job.job_type %></span>
+  <span class= "jtcr"><%= @job.category %></span><br>
+  <span class= "jtcr"><%= @job.region %></span>
+</div>
 
-<p>
-  <strong>Region:</strong>
-  <%= @job.region %>
-</p>
+<div class="container main-container">
+  <p>
+    <%= sanitize @job.description %>
+  </p>
+</div>
 
-<p>
-  <strong>Apply Link:</strong>
-  <%= @job.apply_link %>
-</p>
-
-<p>
-  <strong>Job Description:</strong>
-  <%= sanitize @job.description %>
-</p>
-
-<p>
-  <strong>Company Statement:</strong>
-  <%= @company.statement %>
-</p>
-
-<p>
-  <strong>Logo:</strong>
-  <%= @company.logo %>
-</p>
-
-<p>
-  <strong>Company's Website URL:</strong>
-  <%= @company.url %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @company.email %>
-</p>
-
-<p>
-  <strong>Tell Us More About Your Company:</strong>
-  <%= sanitize @company.company_description %>
-</p>
-
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+<div class="container bottom-container">
+  <%= link_to "Apply for this position", "http://#{@job.apply_link}", class: "btn btn-primary post-btn", :target => "_blank" %>
+</div>
+</div>

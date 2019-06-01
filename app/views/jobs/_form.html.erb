@@ -27,9 +27,9 @@
 
       <div class="form-group col-md-6">
         <%= f.label "Job Type" %><br>
-        <%= f.radio_button :job_type, true, class: "custom-radio" %>
+        <%= f.radio_button :job_type, Job::JOB_TYPE[0], :checked => true, class: "custom-radio" %>
         <%= f.label :job_type, Job::JOB_TYPE[0], :value => "true", class: "cw"  %>
-        <%= f.radio_button :job_type, false, :checked => true, class: "custom-radio" %>
+        <%= f.radio_button :job_type, Job::JOB_TYPE[1], class: "custom-radio" %>
         <%= f.label :job_type,  Job::JOB_TYPE[1], :value => "false", class: "cw" %>
       </div>
 
@@ -60,7 +60,7 @@
       <% end %>
 
       <div class="actions">
-        <%= f.submit %>
+        <%= f.submit class: "btn btn-dark" %>
       </div>
     </div>
 

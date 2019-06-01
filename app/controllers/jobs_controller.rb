@@ -5,12 +5,13 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     @jobs = Job.all
+    @companies = Company.all
   end
 
   # GET /jobs/1
   # GET /jobs/1.json
   def show
-    @company = @job.companies.find(params[:id])
+    @company = @job.companies.find_by(params[:job_id])
   end
 
   # GET /jobs/new
@@ -21,7 +22,7 @@ class JobsController < ApplicationController
 
   # GET /jobs/1/edit
   def edit
-    @job.companies.build
+    #@job.companies.build
   end
 
   # POST /jobs
@@ -73,6 +74,6 @@ class JobsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
       params.require(:job).permit(:title, :category, :job_type, :headquarters, :region, :apply_link, :description,
-      companies_attributes: [:name, :statement, :logo, :url, :email, :company_description])
+      companies_attributes: [:name, :statement, :company_logo, :url, :email, :company_description])
     end
 end
