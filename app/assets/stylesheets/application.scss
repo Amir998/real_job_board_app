@@ -17,12 +17,35 @@
 
 @import "bootstrap";
 
+.jumbotron {
+  background: linear-gradient(360deg, #f7582d, transparent 80%);
+  background-size: cover;
+}
+
+.btn-outline-success {
+  color: #f7582d;
+  border-color: #f7582d;
+}
+
+.btn-outline-success:hover {
+  color: #fff;
+  background-color: #f7582d;
+  border-color: #f7582d;
+}
+
+.navbar {
+  margin-top: -15px;
+  height: 100px;
+}
+
 .elem-align { //Jumbotron customization
   text-align: center;
 }
 
 .elem-align h1 {
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-family: Impact;
 }
 
 .logo-nm-txt {
@@ -33,7 +56,18 @@
   margin-top: 30px;
 }
 
+.head-form-job {
+  height: 300px;
+  width: auto;
+}
+
+.head-form-job h1 {
+  padding-top: 100px;
+  font-family: "Tahoma";
+}
+
 .form-job { //Form customization
+  background-color: white;
   width: 920px;
   border: solid grey 1px;
   border-radius: 5px;
@@ -44,7 +78,7 @@
 }
 
 .form-job h3 {
-  color: red;
+  color: #f7582d;
 }
 
 .fch {
@@ -79,10 +113,10 @@ select#job_category { //Set up Category field
 
 .cte { //Customize upload file field
   border: 2px lightgrey dotted;
-  height: 140px;
+  height: 53px;
 }
 
-.parent-container {
+.parent-container {//Show page
   width: 950px;
   margin: 100px auto;
 }
@@ -133,4 +167,85 @@ div .card {
 
 div .card img {
   margin-top: 20px;
+}
+
+.label-bottom {//Form label
+  font-size: 0.75em;
+  position: relative;
+  top: -18px;
+}
+
+.label-logo-bottom {//Form label
+  font-size: 0.75em;
+  position: relative;
+  top: 2px;
+}
+
+body > form {//Form background
+  background: linear-gradient(360deg, #f7582d, transparent 100%);
+  // background-color: lightblue;
+}
+
+.nav-customization {
+  background-color: #e9ecef;
+}
+
+.index-cards {//index cards customization
+  width: 952px;
+  height: 125px;
+  background-color: #e9ecef;
+}
+
+.index-width {
+  width: 948px;
+}
+
+.flag-logo {
+  display: inline-block;
+  margin-top: 5px;
+  width: 70px;
+  height: 70px;
+  background-size: contain;
+  background-color: #fff;
+  background-position: center center;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  left: -35px;
+  position: absolute;
+  border: 1px transparent #212529;
+}
+
+.index-job-info {
+  color: #212529;
+  font-family: "Tahoma", sans-serif;
+  margin-right: 10px;
+  text-decoration: none;
+  max-width: calc(100% - 375px);
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  margin-top: -4px;
+  margin-bottom: 8px;
+  margin-left: 42px;
+  font-size: 1.25em;
+}
+
+.index-date {
+  float: right;
+  color: #212529;
+  margin-top: -32px;
+  margin-right: -190px;
+  font-family: "Tahoma", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.index-job-title {
+  font-weight: bold;
+}
+
+.index-job-name-type {
+  font-size: 1em;
+  font-family: "Tahoma";
 }

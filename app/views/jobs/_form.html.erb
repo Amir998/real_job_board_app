@@ -1,4 +1,4 @@
-<%= form_for(@job) do |f| %>
+<%= form_with model: @job do |f| %>
 <% if job.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
@@ -11,22 +11,29 @@
 </div>
 <% end %>
 
+<%= render 'layouts/navigation_form' %>
+
+<div class="container mx-auto head-form-job">
+  <h1 align="center">Reach the largest remote community on the web</h1>
+</div>
+
 <div class="container form-job">
 
     <div class="form-row">
       <h3>First, tell us about the position</h3>
       <div class="form-group col-md-12">
-        <%= f.label "Job Title" %>
+        <%= f.label :title, "Job Title" %>
         <%= f.text_field :title, class: "form-control fch" %>
+        <%= f.label :title, "Example: “Senior Designer”. Titles must describe one position.", class: "text-muted text-sm-left font-weight-bold label-bottom" %>
       </div>
 
       <div class="form-group col-md-6">
-        <%= f.label "Category" %><br>
+        <%= f.label :category, "Category" %><br>
         <%= f.select :category, Job::CATEGORY, class: "custom-select" %>
       </div>
 
       <div class="form-group col-md-6">
-        <%= f.label "Job Type" %><br>
+        <%= f.label :job_type, "Job Type" %><br>
         <%= f.radio_button :job_type, Job::JOB_TYPE[0], :checked => true, class: "custom-radio" %>
         <%= f.label :job_type, Job::JOB_TYPE[0], :value => "true", class: "cw"  %>
         <%= f.radio_button :job_type, Job::JOB_TYPE[1], class: "custom-radio" %>
@@ -34,22 +41,25 @@
       </div>
 
       <div class="form-group col-md-6">
-        <%= f.label "Headquarters" %>
+        <%= f.label :headquarters, "Headquarters" %>
         <%= f.text_field :headquarters, class: "form-control fch" %>
+        <%= f.label :headquarters, "Example: “Chicago, IL”,   “Stockholm, Sweden”", class: "text-muted text-sm-left font-weight-bold label-bottom" %>
       </div>
 
       <div class="form-group col-md-6">
-        <%= f.label "Region" %>
+        <%= f.label :region, "Region" %>
         <%= f.text_field :region, class: "form-control fch" %>
+        <%= f.label :region, "Example: “North America Only”,   “P.S.T. Only”", class: "text-muted text-sm-left font-weight-bold label-bottom" %>
       </div>
 
       <div class="form-group col-md-12">
-        <%= f.label "Apply Link" %>
+        <%= f.label :apply_link, "Apply Link" %>
         <%= f.text_field :apply_link, class: "form-control fch" %>
+        <%= f.label :apply_link, "Example: https://mybusiness.com/careers/apply or employee@email.com", class: "text-muted text-sm-left font-weight-bold label-bottom" %>
       </div>
 
       <div class="form-group col-md-12">
-        <%= f.label "Job Description" %>
+        <%= f.label :description, "Job Description" %>
         <%= f.hidden_field :description, class: "form-control fch", id: :description %>
         <trix-editor input="description" class="teh"</trix-editor>
       </div>
@@ -63,6 +73,5 @@
         <%= f.submit class: "btn btn-dark" %>
       </div>
     </div>
-
 </div>
 <% end %>

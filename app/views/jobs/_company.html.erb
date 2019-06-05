@@ -1,30 +1,35 @@
 <div class="form-group col-md-12">
-  <%= f.label "Name" %>
+  <%= f.label :name, "Name" %>
   <%= f.text_field :name, class: "form-control fch" %>
+  <%= f.label :name, "Enter your company or organization’s name.", class: "text-muted text-sm-left font-weight-bold label-bottom" %>
 </div>
 
 <div class="form-group col-md-12">
-  <%= f.label "Company Statement" %>
+  <%= f.label :statement, "Company Statement" %>
   <%= f.text_field :statement, class: "form-control fch" %>
+  <%= f.label :statement, "Enter your company or organization’s mission statement. This will be displayed on your company’s profile.", class: "text-muted text-sm-left font-weight-bold label-bottom" %>
 </div>
 
 <div class="form-group col-md-12 image-upload">
-  <%= f.label "Logo" %>
+  <%= f.label :company_logo, "Logo" %>
   <%= f.file_field :company_logo, class: "form-control cte" %>
+  <%= f.label :company_logo, "It’s highly recommended to use your Twitter or Facebook avatar. Optional — Your company logo will appear at the top of your listing", class: "text-muted text-sm-left font-weight-bold label-logo-bottom" %>
 </div>
 
 <div class="form-group col-md-6">
   <%= f.label :url, "Company's Website URL" %>
   <%= f.text_field :url, class: "form-control fch" %>
+  <%= f.label :url, "Example: https://mybusiness.com/", class: "text-muted text-sm-left font-weight-bold label-bottom" %>
 </div>
 
 <div class="form-group col-md-6">
-  <%= f.label "Email" %>
+  <%= f.label :email, "Email" %>
   <%= f.text_field :email, class: "form-control fch" %>
+  <%= f.label :email, "We’ll send your receipt and confirmation email here.", class: "text-muted text-sm-left font-weight-bold label-bottom" %>
 </div>
 
 <div class="form-group col-md-12">
-  <%= f.label "Tell Us More About Your Company" %>
+  <%= f.label :company_description, "Tell Us More About Your Company" %>
   <%= f.hidden_field :company_description, class: "form-control fch", id: :company_description %>
   <trix-editor input="company_description" class="teh"</trix-editor>
 </div>

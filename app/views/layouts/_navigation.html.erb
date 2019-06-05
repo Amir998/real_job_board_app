@@ -1,18 +1,18 @@
 <header>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"><strong>WWR</strong></a>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <%= link_to image_tag("real_job.png", :alt => "job icon", style: "height: 100px; width: 100px; margin-top: 0px"), root_path %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item dropdown active">
         <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <% Job::CATEGORY.each do |category| %>
+          <a class="dropdown-item" href="#"><%= category %></a>
+          <% end %>
         </div>
       </li>
       <li class="nav-item dropdown active">
@@ -26,16 +26,36 @@
       <li class="nav-item dropdown active">
         <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="http://www.facebook.com" target="_blank">Facebook</a>
+          <a class="dropdown-item" href="http://www.twitter.com" target="_blank">Twitter</a>
+          <a class="dropdown-item" href="http://www.linkedin.com" target="_blank">Linkedin</a>
         </div>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+
+    <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    </form> -->
+
+    <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+      <%= f.input :name, input_html: {value: ""} %>
+      <%= f.submit "Search", class: "btn btn-primary" %>
+    <% end %>
   </div>
 </nav>
 </header>
+
+
+<!-- <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm nav-customization">
+  <h5 class="my-0 mr-md-auto"></h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" href="#">Features</a>
+    <a class="p-2 text-dark" href="#">Enterprise</a>
+    <a class="p-2 text-dark" href="#">Support</a>
+    <a class="p-2 text-dark" href="#">Pricing</a>
+  </nav>
+  <form class="form-inline my-2 my-lg-0">
+  <input class="form-control mr-sm-2" type="search" placeholder="Search">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</div> -->

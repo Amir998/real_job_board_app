@@ -1,24 +1,29 @@
+<%= render 'layouts/navigation' %>
+
 <main>
 <div class="jumbotron elem-align">
   <div class="container logo-nm-txt">
-  <h1 class="display-4">We Work Remotely</h1>
-  <p class="lead"><%= link_to "We Work Remotely", root_path %> is the largest community on the web (with over 2,500,000 monthly visitors) to find and list remote jobs that aren't restricted by commutes or a specific location.</p>
+  <h1 class="display-4">Real Job Board</h1>
+  <p class="lead">We Work Remotely is the largest community on the web (with over 2,500,000 monthly visitors) to find and list remote jobs that aren't restricted by commutes or a specific location.</p>
   <hr class="my-4">
-  <%= link_to "Post a job for $299/month", new_job_path, class: "btn btn-primary btn-lg post-btn" %>
+  <%= link_to "Post a job", new_job_path, class: "btn btn-dark btn-lg post-btn" %>
   </div>
 </div>
 
 <% @jobs.each do |job| %>
-<div class="card mx-auto mb-3" style="max-width: 540px;">
+<div class="card mx-auto mb-3 index-cards">
   <div class="row no-gutters">
-    <div class="col-md-4">
-      <%= image_tag(company.company_logo, style: 'max-height:100px; max-width:100px;') if company.company_logo.attached? %>
-    </div>
+    <div class="card-body index-width">
+      <% job.companies.map do |company| %>
+      <%= image_tag(company.company_logo, class: "flag-logo") if company.company_logo.attached? %>
+      <% end %>
     <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <a href="<%= job_path(job) %>">
+          <span class="index-job-info index-job-name-type"><%= job.companies.pluck(:name).join(',') %></span><br>
+          <span class="index-job-info index-job-title"><%= job.title %></span><br>
+          <span class="index-job-info index-job-name-type"><%= job.job_type %>/<%= job.region %></span>
+          <span class="index-date"><%= job.created_at.strftime("%B %d") %></span>
+        </a>
       </div>
     </div>
   </div>

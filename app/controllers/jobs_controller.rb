@@ -4,8 +4,12 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
-    @companies = Company.all
+    @jobs = Job.all.order("created_at DESC")
+    @search = params["search"]
+    if @search.present?
+      @name = @search["name"]
+      @jobs = Job.where(title: @name)
+    end
   end
 
   # GET /jobs/1
