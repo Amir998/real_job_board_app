@@ -8,7 +8,9 @@ class JobsController < ApplicationController
     @search = params["search"]
     if @search.present?
       @name = @search["name"]
-      @jobs = Job.where(title: @name)
+      @jobs = Job.where("title ILIKE ?", "%#{@name}%")
+      @jobs = Job.where("job_type ILIKE ?", "%#{@name}%")
+      @jobs = Job.where("region ILIKE ?", "%#{@name}%")
     end
   end
 
@@ -36,7 +38,7 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.save
-        format.html { redirect_to @job, notice: 'Job was successfully created.' }
+        format.html { redirect_to @job }
         format.json { render :show, status: :created, location: @job }
       else
         format.html { render :new }

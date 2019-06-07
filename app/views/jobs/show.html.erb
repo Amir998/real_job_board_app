@@ -4,32 +4,46 @@
 
 <div class="container parent-container">
   <div align="center" class="card" style="width: 18rem;">
-    <%= image_tag(@company.company_logo, style: 'max-height:100px; max-width:100px;') if @company.company_logo.attached? %>
+    <%= image_tag(@company.company_logo, style: 'max-height:100px; max-width:100px; border-radius: 50%') if @company.company_logo.attached? %>
     <div class="card-body">
       <h3 class="card-title"><%= @company.name %></h3>
       <h6><%= octicon "location", :height => 24,  :class => "right left", :"aria-label" => "hi" %><br><%= @job.headquarters %></h6>
-      <h6><%= link_to "View website", "http://#{@company.url}", :target => "_blank" %></h6>
-      <%= link_to "Apply for this position", "http://#{@job.apply_link}", class: "btn btn-primary post-btn", :target => "_blank" %>
+      <h6><%= link_to "View website", "#{@company.url}", :target => "_blank" %></h6>
+      <%= link_to "Apply for this position", "#{@job.apply_link}", class: "btn btn-dark post-btn", :target => "_blank" %>
     </div>
   </div>
 
-<div class="container head-container">
-  <h7 class="text-muted">POSTED <%= @job.created_at.strftime("%B %d") %></h7>
+  <div class="container head-container">
+    <h7 class="text-muted">POSTED <%= @job.created_at.strftime("%B %d") %></h7>
 
-  <h1><%= @job.title %></h1>
+    <h1><%= @job.title %></h1>
 
-  <span class= "jtcr"><%= @job.job_type %></span>
-  <span class= "jtcr"><%= @job.category %></span><br>
-  <span class= "jtcr"><%= @job.region %></span>
-</div>
+    <span class= "jtcr"><%= @job.job_type %></span>
+    <span class= "jtcr"><%= @job.category %></span><br>
+    <span class= "jtcr"><%= @job.region %></span>
+  </div>
 
-<div class="container main-container">
-  <p>
-    <%= sanitize @job.description %>
-  </p>
-</div>
+  <div class="container main-container">
+    <p>
+      <%= sanitize @job.description %>
+    </p>
+  </div>
 
-<div class="container bottom-container">
-  <%= link_to "Apply for this position", "http://#{@job.apply_link}", class: "btn btn-primary post-btn", :target => "_blank" %>
-</div>
+  <div class="container bottom-container">
+    <%= link_to "Apply for this position", "http://#{@job.apply_link}", class: "btn btn-dark post-btn", :target => "_blank" %>
+  </div>
+
+  <br><br><br>
+
+  <div class="container company-container">
+
+    <%= image_tag(@company.company_logo, style: 'max-height:100px; max-width:100px; border-radius: 50%') if @company.company_logo.attached? %>
+    <h1 class="company-name"><%= @company.name %></h1>
+
+    <hr>
+
+    <h1 class="statement"><%= @company.statement %></h1>
+    <p><%= sanitize @company.company_description %></p>
+
+  </div>
 </div>

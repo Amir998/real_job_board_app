@@ -56,6 +56,8 @@
   margin-top: 30px;
 }
 
+//Form page
+
 .head-form-job {
   height: 300px;
   width: auto;
@@ -63,7 +65,9 @@
 
 .head-form-job h1 {
   padding-top: 100px;
+  color: #f7582d;
   font-family: "Tahoma";
+  font-weight: bold;
 }
 
 .form-job { //Form customization
@@ -79,6 +83,7 @@
 
 .form-job h3 {
   color: #f7582d;
+  font-family: "Tahoma";
 }
 
 .fch {
@@ -116,7 +121,9 @@ select#job_category { //Set up Category field
   height: 53px;
 }
 
-.parent-container {//Show page
+//Show page
+
+.parent-container {
   width: 950px;
   margin: 100px auto;
 }
@@ -124,10 +131,12 @@ select#job_category { //Set up Category field
 .head-container {
   width: 665px;
   margin-left: -50px;
+  font-family: "Tahoma", sans-serif;
 }
 
 .head-container h1 {
   padding: 15px 0;
+
 }
 
 .main-container {
@@ -144,6 +153,48 @@ select#job_category { //Set up Category field
   margin-left: -50px;
 }
 
+.company-container {
+  background: #f8f9fa;
+  padding: 20px 36px 10px 36px;
+  -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.15);
+  box-shadow: 0 1px 5px rgba(0,0,0,0.15);
+  border-radius: 2px;
+  width: 900px;
+  margin: 20px 2px 70px 0px;
+  min-height: 275px;
+  line-height: 28px;
+}
+
+.company-top-container {
+  overflow: hidden;
+  float: left;
+  width: 875px;
+  padding: 20px 20px 0 0px;
+  border-bottom: 1px solid rgba(144,146,148,0.2);
+  height: 120px;
+}
+
+.company-name {
+  font-size: 30px;
+  font-family: "Tahoma", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  color: #212529;
+  padding: 0;
+  margin: 0 0 7px 0;
+  text-align: left;
+  line-height: 1.5em;
+  max-width: calc(100% - 390px);
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.statement {
+  font-size: 30px;
+  color: #212529;
+}
+
 .jtcr {
   color: #2736a3;
   background-color: #dde0f4;
@@ -153,7 +204,6 @@ select#job_category { //Set up Category field
   border-radius: 2px;
   border: 1px solid #2736a3;
   display: inline-block;
-  font-family: "Neufile Grotesk Regular", sans-serif;
   margin-right: 8px;
   margin-bottom: 5px;
   text-transform: uppercase;
@@ -168,6 +218,8 @@ div .card {
 div .card img {
   margin-top: 20px;
 }
+
+//End of show page
 
 .label-bottom {//Form label
   font-size: 0.75em;
@@ -248,4 +300,8 @@ body > form {//Form background
 .index-job-name-type {
   font-size: 1em;
   font-family: "Tahoma";
+}
+
+#navbarTogglerDemo02 > form > div > label {
+  display: none;
 }
