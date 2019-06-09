@@ -8,9 +8,7 @@ class JobsController < ApplicationController
     @search = params["search"]
     if @search.present?
       @name = @search["name"]
-      @jobs = Job.where("title ILIKE ?", "%#{@name}%")
-      @jobs = Job.where("job_type ILIKE ?", "%#{@name}%")
-      @jobs = Job.where("region ILIKE ?", "%#{@name}%")
+      @jobs = Job.where("title || job_type || region || category ILIKE ?", "%#{@name}%")
     end
   end
 
